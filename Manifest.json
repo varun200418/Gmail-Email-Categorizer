@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "Gmail Email Categorizer",
+  "version": "2.0",
+  "description": "Categorizes Gmail emails into spam, education, promotions, jobs, and technology. Allows export to CSV.",
+  "permissions": ["scripting", "tabs", "storage"],
+  "host_permissions": ["https://mail.google.com/"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://mail.google.com/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
